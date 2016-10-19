@@ -3,6 +3,7 @@
 namespace tests\codeception\_support;
 
 use app\tests\codeception\fixtures\CategoryFixture;
+use app\tests\codeception\fixtures\UserFixture;
 
 use Codeception\Module;
 use yii\test\FixtureTrait;
@@ -27,8 +28,8 @@ class FixtureHelper extends Module
         globalFixtures as public;
         createFixtures as public;
         unloadFixtures as protected;
-        getFixtures as protected;
-        getFixture as protected;
+        getFixtures as public;
+        getFixture as public;
     }
 
     /**
@@ -68,6 +69,10 @@ class FixtureHelper extends Module
             'category' => [
                 'class' => CategoryFixture::className(),
                 'dataFile' => '@tests/codeception/fixtures/data/cal_category.php',
+            ],
+            'user' => [
+                'class' => UserFixture::className(),
+                'dataFile' => '@tests/codeception/fixtures/data/user.php',
             ],
         ];
     }
